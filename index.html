@@ -27,6 +27,17 @@
   color: white;
   overflow: hidden;
 }
+.hero-card {
+  background: rgba(255, 255, 255, 0.05); /* branco translúcido */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  max-width: 500px;
+  width: 90%;
+}
+
 
 .background-video {
   position: absolute;
@@ -96,6 +107,21 @@
       font-size: 0.9rem;
       color: #888;
     }
+    @media (max-width: 480px) {
+  .hero-card {
+    padding: 1.2rem;
+    max-width: 360px;
+    border-radius: 12px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .logo {
+    width: 280px;
+    margin-bottom: 24px;
+  }
+}
+
     
   </style>
 </head>
@@ -103,14 +129,17 @@
   <div class="hero">
     <video autoplay muted loop playsinline class="background-video">
       <source src="./imagens:/mahara-banner.mp4" type="video/mp4" /> </video>
-    <img src="./imagens:/Mahara Green white .png" alt="Mahara Green" class="logo" />
-    <h1>De volta à essência</h1>
-    <form name="cadastro" method="POST" netlify action="/obrigado.html">
-      <input type="hidden" name="form-name" value="cadastro" />
-      <input type="email" name="email" placeholder="Seu e-mail" required />
-      <button type="submit">Cadastrar</button>
-    </form>
-    <p style="margin-top: 1rem; color: black">Cadastre-se e seja o primeiro a descobrir o novo capítulo da Mahara Green.</p>
+      <div class="hero-card">
+        <img src="./imagens:/Mahara Green white .png" alt="Mahara Green" class="logo" />
+        <h1>De volta à essência</h1>
+        <form name="cadastro" method="POST" netlify action="/obrigado.html">
+          <input type="hidden" name="form-name" value="cadastro" />
+          <input type="email" name="email" placeholder="Seu e-mail" required />
+          <button type="submit">Cadastrar</button>
+        </form>
+        <p style="margin-top: 1rem; color: black">Cadastre-se e seja o primeiro a descobrir o novo capítulo da Mahara Green.</p>
+      </div>
+      
   </div>
 
   <section class="section manifesto">
